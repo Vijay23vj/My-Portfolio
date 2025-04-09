@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="icon" href="vj.png" type="image/x-icon" />
+  <!-- Animate.css & Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome 6 (latest) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 30px;
+    }
+    .navbar {
+  height: 75px;
+  padding-top: 0;
+  padding-bottom: 0;
+  position: fixed; /* or sticky */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+section {
+  min-height: 100vh;
+  padding-top: 40px;
+  background-color: #ffffff; /* uniform background */
+}
+.main-content {
+  margin-top: 80px; /* Adjust as per navbar height */
+}
+.brand-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+    .skill-icon {
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+    .skill-icon:hover {
+      transform: scale(1.2);
+    }
+    .sticky-sidebar {
+      position: sticky;
+      top: 80px;
+    }
+    .toast-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+
+    .contact-icons a {
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.contact-icons a:hover {
+  transform: scale(1.2);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.contact-icons a:hover i {
+  color: #2784ee !important;
+}
+
+
+body {
+  color: #000; /* Make all text black */
+  font-weight: 400;
+  padding-top: 75px; 
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand, .card-title {
+  font-weight: 700; 
+  color: #000;
+}
+
+p {
+  font-weight: 600;
+  color: #333;
+}
+
+.experience-box {
+  max-width: 100vw; /* or whatever looks good */
+  margin: 0 auto;
+}
+#about {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  #about .row {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 960px;
+  }
+}
+
+</style>
+</head>
+
+<body class="bg-white text-dark">
+  <!-- Toast Container -->
+  <div class="toast-container">
+    <div id="thankYouToast" class="toast align-items-center text-bg-success border-0" role="alert">
+      <div class="d-flex">
+        <div class="toast-body">Thank you for your message!</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+            <img src="vj.png" alt="VJ Logo" width="40" height="40" style="border-radius: 8px;" />
+            <span class="brand-name text-black">Vijay Kumar Hiremath</span>
+          </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <a href="VIJAY-H-RESUME.pdf" class="btn btn-outline-primary ms-2" download>Download Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left Side: Name -->
+        <div class="col-md-6 text-center text-md-start">
+            <h1 class="display-4 fw-bold text-black" data-aos="fade-right">
+                Hi, I'm Vijay Kumar Hiremath
+              </h1>
+        </div>
+  
+        <!-- Right Side: Image with Shadow -->
+        <div class="col-md-6 text-center">
+            <img src="th (1).webp" class="img-fluid rounded-4 shadow-lg" alt="Developer Image" loading="lazy" data-aos="fade-left" height="300px" width="300px"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- About -->
+ <section id="about" class="bg-white py-5">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      
+      <!-- Profile Image -->
+      <div class="col-12 col-md-6 text-center mb-4 mb-md-0" data-aos="zoom-in">
+        <img src="PIC.webp" loading="lazy"
+             class="img-fluid rounded-4 shadow"
+             alt="Profile Picture"
+             style="max-width: 300px; height: auto;" />
+      </div>
+
+      <!-- About Text -->
+      <div class="col-12 col-md-6 text-center text-md-start" data-aos="fade-up">
+        <h2>About Me</h2>
+        <p class="text-muted">
+          "As a passionate Java Full Stack Developer, I enjoy creating efficient and scalable web applications that make a real impact."
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Internship -->
+<section id="experience" class="bg-white py-5">
+    <h2 class="text-center mb-4">Internship Experience</h2>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10" data-aos="fade-up">
+          <div class="border shadow p-4 rounded-4 bg-white">
+            <p><strong>Company:</strong>Whiteklay Technologies Pvt Ltd<br>
+              <strong>Role:</strong> Data Analytics & Visualization Intern<br>
+               <strong>Type:</strong> Work from Office<br>
+               <strong>Duration:</strong> [July 2023 – Dec 2023]</p>
+  
+            <ul>
+              <li>Focused on building data-driven dashboards using Apache Superset to visualize key internal metrics.</li>
+              <li>Created and deployed over four dashboards that streamlined reporting and improved decision-making efficiency.</li>
+              <li>Worked extensively with PostgreSQL and MySQL for optimized data retrieval.</li>
+            </ul>
+  
+            <h4 class="mt-4">Key Projects</h4>
+  
+            <h5>VDA Project</h5>
+            <ul>
+              <li>Developed a live KPI dashboard integrating multiple sources for enhanced visibility.</li>
+              <li>Enhanced the Keycloak login interface using Docker to provide a secure, user-specific experience.</li>
+              <li>Implemented data accuracy checks and filters for more reliable reporting.</li>
+            </ul>
+  
+            <h5>Star Project</h5>
+            <ul>
+              <li>Transformed detailed Figma UI designs into responsive, data-driven dashboards.</li>
+              <li>Collaborated with designers and stakeholders for continuous UI/UX refinement.</li>
+              <li>Automated data updates with SQL scripts, ensuring the dashboard always reflected real-time metrics.</li>
+            </ul>
+  
+            <p><strong>Outcome:</strong> The internship led to a 20% increase in data reporting efficiency and deeper organizational insights.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+    
+  
+  
+  <!-- Skills -->
+  <section id="skills" class="bg-white">
+    <div class="container">
+        <h2 class="text-center text-black mb-5" data-aos="fade-up">Skills & Tools</h2>
+      <div class="row text-center g-4">
+        <h4 class="text-start mt-2 text-primary">Technical Skills</h4>
+        <!-- Technical Skills -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="skill-icon mb-2" />
+          <p>HTML5</p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="skill-icon mb-2" />
+          <p>CSS3</p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-icon mb-2" />
+          <p>JavaScript</p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="skill-icon mb-2" />
+          <p>Java</p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="skill-icon mb-2" />
+          <p>MySQL</p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" class="skill-icon mb-2" />
+          <p>Spring Boot</p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="https://img.icons8.com/ios-filled/100/000000/server.png" alt="Servlets" class="skill-icon mb-2" />
+          <p>Servlets</p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="https://cdn-icons-png.flaticon.com/512/2721/2721294.png" alt="JDBC" class="skill-icon mb-2" />
+          <p>JDBC</p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="https://cdn-icons-png.flaticon.com/512/1006/1006360.png" alt="REST API" class="skill-icon mb-2" />
+          <p>REST API</p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg" alt="Hibernate" class="skill-icon mb-2" />
+          <p>Hibernate</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+            <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="SDLC" class="skill-icon mb-2" />
+            <p>Software Development Life Cycle</p>
+          </div>
+          
+      </div>
+
+      <!-- Tools -->
+      <h4 class="text-start mt-2 text-primary">Tools</h4>
+      <div class="row text-center g-4">
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="skill-icon mb-2" />
+          <p>Git</p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="skill-icon mb-2" />
+          <p>GitHub</p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg" alt="Eclipse" class="skill-icon mb-2" />
+          <p>Eclipse</p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman" class="skill-icon mb-2" />
+          <p>Postman</p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="skill-icon mb-2" />
+          <p>VS Code</p>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <h4 class="text-start mt-2 text-primary">Soft Skills</h4>
+      <div class="row text-center g-4">
+        <div class="col-6 col-md-3">
+          <i class="fas fa-comments fa-3x text-secondary mb-2"></i>
+          <p>Communication</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <i class="fas fa-lightbulb fa-3x text-secondary mb-2"></i>
+          <p>Problem Solving</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <i class="fas fa-users fa-3x text-secondary mb-2"></i>
+          <p>Teamwork</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <i class="fas fa-sync-alt fa-3x text-secondary mb-2"></i>
+          <p>Adaptability</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- Projects -->
+<section id="projects" class="bg-white">
+    <div class="container">
+      <h2 class="text-center text-black mb-5">Projects</h2>
+  
+      <div class="row g-4">
+        <!-- Project 1 -->
+        <div class="col-md-6">
+            <div class="card shadow-sm" data-aos="fade-up">
+            <img src="article_2659_cover_en_US.webp" loading="lazy" height="300px" width="300px" class="card-img-top" alt="Non-Invasive Glucometer Project using Arduino" style="display: block; margin: auto; object-fit: cover;" />
+            <div class="card-body">
+              <h5 class="card-title">Non Invasive Glucometer with Bluetooth Monitoring using Arduino Uno</h5>
+              <p class="card-text">
+                <strong>Tech Stack:</strong> MATLAB/ArduinoUno, Bluetooth HC-06, LCD Display, Sensor <br />
+                Implemented and managed non-invasive glucometer with Bluetooth monitoring technology, demonstrating
+                expertise in medical device innovation.<br />
+                Developed seamless connectivity for real-time data transmission, enhancing user experience and providing
+                valuable insights for health monitoring.
+              </p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Project 2 -->
+        <div class="col-md-6">
+            <div class="card shadow-sm" data-aos="fade-up" data-aos-delay="100">
+              <img 
+              src="online-shopping-concept-FRP2TC.webp" 
+              alt="e-commerce project" 
+              width="300" 
+              height="300" 
+              class="card-img-top" 
+              style="display: block; margin: auto; object-fit: cover;"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Dynamic E-commerce Web Application Using Spring Boot & Razorpay Integration</h5>
+              <p class="card-text">
+                <strong>Tech Stack:</strong> Spring Boot, Thymeleaf, MySQL, Hibernate, Razorpay API<br>
+                Built a full-stack e-commerce platform with user authentication, role-based access, and secure payment processing.
+                Integrated Razorpay for payment transactions and Cloudinary for efficient image handling. 
+                Designed an intuitive UI for seamless product browsing and checkout experience.
+            </div>
+          </div>
+        </div>
+      </div>    
+    </div>
+  </section>
+  
+
+  <!-- Contact -->
+  <section id="contact" class="bg-light">
+    <div class="container">
+      <h2 class="text-center text-black mb-5">Contact Me</h2>
+      <form id="contact-form" method="POST" action="/api/contact" class="mx-auto" style="max-width: 600px;" data-aos="fade-up">
+        <input type="text" class="form-control mb-3" name="name" id="name" placeholder="Your Name" required />
+        <input type="email" class="form-control mb-3" name="email" id="email" placeholder="Your Email" required />
+        <textarea class="form-control mb-3" name="message" id="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+      </form>
+      <div class="text-center mt-4 contact-icons">
+        <a href="https://www.linkedin.com/in/vijay-kumar-hiremath-634a3b221" class="text-secondary fs-3 me-3" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Vijay23vj" class="text-secondary fs-3 me-3" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:hvijaykumar51@gmail.com" class="text-secondary fs-3 me-3"><i class="fas fa-envelope" aria-label="Email Vijay Kumar Hiremath"></i></a>
+        <a href="tel:+917349509646" class="text-secondary fs-3"><i class="fas fa-phone"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center py-3 border-top">
+    <p class="mb-0">&copy; 2025 Vijay Kumar Hiremath. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: false,
+    mirror:true
+  });
+
+  document.querySelector('a[href="#hero"]').addEventListener('click', () => {
+  setTimeout(() => {
+    AOS.refresh(); 
+  }, 100); 
+});
+</script>
+<script>
+  const form = document.getElementById("contact-form");
+  const toast = new bootstrap.Toast(document.getElementById("thankYouToast"));
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message || !email.includes("@")) {
+      alert("Please enter valid details.");
+      return;
+    }
+
+    setTimeout(() => {
+      form.reset();       // Clear the form
+      toast.show();       // Show thank-you toast
+    }, 1000);
+  });
+</script>
+
+
+</body>
+</html>
