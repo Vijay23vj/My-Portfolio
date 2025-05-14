@@ -1,0 +1,171 @@
+body {
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    font-weight: 400;
+    min-height: 100vh;
+    overflow-x: hidden;
+     overflow-y: scroll;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+
+.navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+section {
+    min-height: 100vh;
+}
+
+.main-content {
+    margin-top: 80px;
+}
+
+.brand-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.skill-icon {
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.skill-icon:hover {
+    transform: scale(1.2);
+}
+
+.sticky-sidebar {
+    position: sticky;
+    top: 80px;
+}
+
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.contact-icons a {
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    padding: 6px;
+    border-radius: 50%;
+}
+
+.contact-icons a:hover {
+    transform: scale(1.2);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.contact-icons a:hover i {
+    color: #2784ee !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand,
+.card-title {
+    font-weight: 700;
+}
+
+p {
+    font-weight: 600;
+    color: #333;
+}
+
+.experience-box {
+    max-width: 100vw;
+    padding-top: 1rem;
+}
+
+#about {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.btn-animated {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-animated::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-20deg);
+    transition: all 0.5s ease;
+}
+
+.btn-animated:hover::after {
+    left: 120%;
+}
+
+.custom-toggler {
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.custom-toggler:focus {
+    box-shadow: none;
+}
+
+body.dark-mode .custom-toggler {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+}
+
+#footer {
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
